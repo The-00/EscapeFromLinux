@@ -1,0 +1,30 @@
+#navigation {
+    background-color: rgb(236, 213, 255);
+    padding: 2em;
+}
+
+#timer {
+    text-align: right;
+    font-size: larger;
+}
+
+#content {
+    background-color:aliceblue;
+    height: 200%;
+}
+
+.link {
+    stroke: black;
+    stroke-width: 2;
+    marker: #000;
+}
+  
+.node {
+    pointer-events: none;
+    font: 10px sans-serif;
+}
+
+#arrowhead {
+    stroke: #000000;
+    fill: #000000;
+}

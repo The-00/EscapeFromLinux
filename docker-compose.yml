@@ -1,0 +1,10 @@
+version: '3'
+services:
+  efl:
+    build: .
+    environment:
+      - TIMER=1.7.14
+    ports:
+      - 8080:80
+    networks:
+      default:
