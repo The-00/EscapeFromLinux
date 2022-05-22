@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
@@ -12,6 +12,7 @@
 		<title>Escape From Linux</title>
 	</head>
 	<body>
+
 		<div class="container">
 			<div id="navigation" class="row">
 				<div id="logo" class="col-xs-2 col-sm-1 col-md-1">LOGO</div>
@@ -20,17 +21,23 @@
 			</div>
 			
 			<div id="content" class="row">
-				<div id="d3js-tree" class="col-xs-12 col-sm-6 col-md-8"><svg width="500" height="500"></svg></div>
+				<div id="d3js-tree" class="col-xs-12 col-sm-6 col-md-8"></div>
 				<div id="active-task" class="col-xs-6 col-md-4">
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse euismod felis et nisi aliquet, sed mattis nisl volutpat. Donec ligula diam, porttitor at mi eget, tristique sodales lorem.</p>
-					<a href="#" class="btn btn-primary">Validate</a>
-					<a href="#" class="btn btn-primary">Hint</a>
+					<h3 id="taskTitle"></h3>
+					<p  id="taskDesc"></p>
+					<a  id="taskValidate" href="#" class="btn btn-primary">Validate</a>
+					<a  id="taskHint"     href="#" class="btn btn-primary">Hint</a>
+					<p  id="taskValidateValue"></p>
+					<p  id="taskHintValue"></p>
 
 				</div>
 			</div>
 		</div>
 
+
+		<!-- D3 JS -->
+		<script src="/res/js/d3.v3.min.js" ></script>
+		<script src="/res/js/display.js" ></script>
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -38,21 +45,6 @@
 		<script src="/res/js/popper.min.js" ></script>
 		<script src="/res/js/bootstrap.min.js" ></script>
 
-		<!-- D3 JS -->
-		<script src="/res/js/d3.v4.js" ></script>
-		<script src="/res/js/d3-selection-multi.v1.js" ></script>
-
-
-		<script src="/res/js/display.js" ></script>
-
-		<script>
-			TASKS=[{"title":"TASK Number 1","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse euismod felis et nisi aliquet, sed mattis nisl volutpat. Donec ligula diam, porttitor at mi eget, tristique sodales lorem. Phasellus id","id":1,"depends_on":[]},{"title":"TASK Number 1","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse euismod felis et nisi aliquet, sed mattis nisl volutpat. Donec ligula diam, porttitor at mi eget, tristique sodales lorem. Phasellus id","id":2,"depends_on":[]},{"title":"TASK Number 1","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse euismod felis et nisi aliquet, sed mattis nisl volutpat. Donec ligula diam, porttitor at mi eget, tristique sodales lorem. Phasellus id","id":3,"depends_on":[0,1]}]
-
-			TREE = []
-			for(let i=0; i<TASKS.length; i++){
-				console.log(TASKS[i].id)
-			}
-		</script>
 
 	</body>
 </html>

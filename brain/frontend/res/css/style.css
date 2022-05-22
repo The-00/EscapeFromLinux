@@ -16,12 +16,14 @@
 .link {
     stroke: black;
     stroke-width: 2;
-    marker: #000;
+    marker: black;
 }
   
 .node {
-    pointer-events: none;
     font: 10px sans-serif;
+    cursor: move;
+    stroke: black;
+    stroke-width: 2px;
 }
 
 #arrowhead {

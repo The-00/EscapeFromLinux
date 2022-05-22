@@ -54,4 +54,14 @@ do_cat = Task(
         parents=[ do_ls ]
         )
 
-TASKS = [ do_ls, do_cat ]
+do_cat2 = Task(
+        name="show file content",
+        description="use a binary to show the content of the /escape/where_am_i",
+        clue="something like 'cat' ?",
+        value=1,
+        install_function=None,
+        verify_function=verify_file( "/.EFL-verify/cat2ok" ),
+        parents=[ do_ls ]
+        )
+
+TASKS = [ do_ls, do_cat, do_cat2 ]
