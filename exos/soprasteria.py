@@ -3,22 +3,24 @@ import os
 
 
 def install_basic_question():
+    filename="/escape/todo"
     os.system('mkdir -p /.EFL /.EFL-verify /escape')
-    os.system('touch /escape/where_am_i')
+    if not os.path.exists(filename):
+        os.system(f"touch {filename}")
 
-    txt = "+-----------------------------------------------------------------+\n"
-    txt+= "| New Tasks :                                                     |\n"
-    txt+= "|   1: install wget and validate the task (debian system)         |\n"
-    txt+= "|   2: install caca-utils (yes it's a real package for caca lib   |\n"
-    txt+= "|                                            img manipulation lib)|\n"
-    txt+= "+-----------------------------------------------------------------+\n"
+        txt = "+-----------------------------------------------------------------+\n"
+        txt+= "| New Tasks :                                                     |\n"
+        txt+= "|   1: install wget and validate the task (debian system)         |\n"
+        txt+= "|   2: install caca-utils (yes it's a real package for caca lib   |\n"
+        txt+= "|                                            img manipulation lib)|\n"
+        txt+= "+-----------------------------------------------------------------+\n"
 
-    f = open('/escape/where_am_i', 'w')
-    f.write(txt)
+        f = open(filename, 'w')
+        f.write(txt)
 
-    # how to detect a task is done
-    os.system("mv /bin/ls  /.EFL/ls  && echo '#!/bin/bash\\necho 1 > /.EFL-verify/lsok \\n/.EFL/ls  $@' > /bin/ls  && chmod a+x /bin/ls")
-    os.system("mv /bin/cat /.EFL/cat && echo '#!/bin/bash\\necho 1 > /.EFL-verify/catok\\n/.EFL/cat $@' > /bin/cat && chmod a+x /bin/cat")
+        # how to detect a task is done
+        os.system("mv /bin/ls  /.EFL/ls  && echo '#!/bin/bash\\necho 1 > /.EFL-verify/lsok \\n/.EFL/ls  $@' > /bin/ls  && chmod a+x /bin/ls")
+        os.system("mv /bin/cat /.EFL/cat && echo '#!/bin/bash\\necho 1 > /.EFL-verify/catok\\n/.EFL/cat $@' > /bin/cat && chmod a+x /bin/cat")
 
 def install_clue():
     sopraTxt=f"""
@@ -99,7 +101,7 @@ do_cat = Task(
 get_wget = Task(
         name="Task 1 in /escape/todo",
         description="just do the task 1 in /escape/todo ans validate",
-        clue="something like 'apt install' ?",
+        clue="something like 'apt install' ? or 'apt update'",
         value=3,
         install_function=None,
         verify_function=verify_package( "wget" ),
@@ -109,7 +111,7 @@ get_wget = Task(
 get_caca = Task(
         name="Task 2 in /escape/todo",
         description="just do the task 2 in /escape/todo ans validate",
-        clue="something like 'apt install' ?",
+        clue="something like 'apt install' or 'apt update' ? ",
         value=3,
         install_function=None,
         verify_function=verify_package( "img2txt" ),

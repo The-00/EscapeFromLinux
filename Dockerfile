@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends python3.5 pytho
 RUN pip install --no-cache-dir --upgrade pip &&\
     pip install --no-cache-dir fastapi uvicorn
 
+RUN mkdir -p /escape
 COPY brain/ /srv/EFL
 
 WORKDIR /srv/EFL
